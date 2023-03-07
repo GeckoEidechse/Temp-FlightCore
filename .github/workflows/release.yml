@@ -67,7 +67,7 @@ jobs:
         INSTALL_DIR: .
       run: |
         curl -sL https://sentry.io/get-cli/ | sh
-        ls -alh
+        ls
     - name: Run sentry-cli (Windows only)
       if: matrix.platform == 'windows-latest'
       env:
@@ -75,7 +75,7 @@ jobs:
         SENTRY_ORG: northstar-kv
         SENTRY_PROJECT: flightcore
       run: |
-        ls -alh
+        ls
         ./sentry-cli upload-dif --wait src-tauri/target/release/app.pdb
     - name: Release
       uses: softprops/action-gh-release@v1

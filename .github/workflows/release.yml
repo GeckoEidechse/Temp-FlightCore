@@ -75,7 +75,7 @@ jobs:
         SENTRY_ORG: northstar-kv
         SENTRY_PROJECT: flightcore
       run: |
-        sentry-cli.exe upload-dif --wait src-tauri/target/release/app.pdb
+        ./sentry-cli.exe upload-dif --wait src-tauri/target/release/app.pdb
     - name: Release
       uses: softprops/action-gh-release@v1
       with:

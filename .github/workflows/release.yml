@@ -70,8 +70,8 @@ jobs:
         SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         SENTRY_ORG: northstar-kv
         SENTRY_PROJECT: flightcore
-        run: |
-          sentry-cli upload-dif --wait src-tauri/target/release/app.pdb
+      run: |
+        sentry-cli upload-dif --wait src-tauri/target/release/app.pdb
     - name: Release
       uses: softprops/action-gh-release@v1
       with:

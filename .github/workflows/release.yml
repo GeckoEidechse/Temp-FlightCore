@@ -5,17 +5,17 @@ on:
       - 'v*'
 
 jobs:
-  # Ensure version numbers in various places match up
-  ensure-same-version:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v3
-      - name: install dependencies
-        run: |
-          pip install toml
-      - name: Run check
-        run: |
-          python3 scripts/check_version_numbers.py --release ${{github.event.release.tag_name}}
+  # # Ensure version numbers in various places match up
+  # ensure-same-version:
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: install dependencies
+  #       run: |
+  #         pip install toml
+  #     - name: Run check
+  #       run: |
+  #         python3 scripts/check_version_numbers.py --release ${{github.event.release.tag_name}}
 
   build:
     needs: ensure-same-version

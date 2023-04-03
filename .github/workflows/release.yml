@@ -93,7 +93,7 @@ jobs:
     - uses: actions/download-artifact@v3
     - name: Create release file
       run: |
-        python3 scripts/create-release-file.py --version ${{github.event.release.tag_name}}
+        python3 scripts/create-release-file.py --version ${{ github.ref_name }}
 
     - name: upload release file
       uses: softprops/action-gh-release@v1

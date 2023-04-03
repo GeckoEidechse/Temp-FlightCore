@@ -4,6 +4,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write # Needed to write to GitHub draft release
+
 jobs:
   # # Ensure version numbers in various places match up
   # ensure-same-version:
